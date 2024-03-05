@@ -16,7 +16,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		System.out.println("LoginInterceptor preHandle ");
 		HttpSession session = request.getSession();
 		Auth auth = (Auth) session.getAttribute("auth");
-		
+		System.out.println(request.getServletPath());
 		if (auth==null ) {
 			response.sendRedirect(request.getContextPath()+"/auth/login");
 			return false;

@@ -33,6 +33,8 @@ public class LoginController {
 	@PostMapping
 	public String login(LoginCommand loginCommand,HttpServletRequest request) {
 		String msg=request.getParameter("msg");
+		
+		
 		try {
 			Auth auth = authenticator.authenticate(loginCommand.getEmail(),
 					loginCommand.getPassword());
